@@ -1396,6 +1396,84 @@
             backdrop-filter: blur(8px);
         }
 
+        #loading-screen {
+            z-index: 130;
+            background:
+                linear-gradient(180deg, rgba(5, 10, 16, 0.72), rgba(4, 8, 13, 0.9)),
+                url("assets/title_background_inkwash.jpg") center / cover;
+        }
+
+        #loading-card {
+            width: min(720px, 92vw);
+            padding: 18px 18px 16px;
+            background:
+                linear-gradient(180deg, rgba(7, 14, 24, 0.84), rgba(6, 10, 18, 0.78)),
+                radial-gradient(circle at 14% 10%, rgba(255, 221, 145, 0.12), rgba(255, 221, 145, 0));
+            border: 1px solid rgba(255, 245, 214, 0.22);
+            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.46), 0 0 24px rgba(92, 202, 180, 0.08);
+        }
+
+        #loading-title {
+            font-family: "WuxiaTitle", "Noto Serif TC", serif;
+            font-size: clamp(24px, 3.2vw, 40px);
+            color: #ffe7ac;
+            letter-spacing: 2px;
+            text-shadow: 0 0 14px rgba(255, 196, 111, 0.28);
+        }
+
+        #loading-sub {
+            margin-top: 6px;
+            font-size: 14px;
+            line-height: 1.55;
+            color: rgba(232, 241, 255, 0.9);
+        }
+
+        #loading-bar-shell {
+            margin-top: 14px;
+            height: 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(4, 8, 14, 0.72);
+            overflow: hidden;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        #loading-bar-fill {
+            width: 0%;
+            height: 100%;
+            background:
+                linear-gradient(90deg, rgba(109, 240, 213, 0.92), rgba(255, 220, 144, 0.96));
+            box-shadow: 0 0 14px rgba(101, 245, 218, 0.32);
+            transition: width 0.16s ease;
+        }
+
+        #loading-meta {
+            margin-top: 8px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(224, 237, 255, 0.9);
+        }
+
+        #loading-count {
+            color: rgba(207, 246, 255, 0.9);
+        }
+
+        #loading-percent {
+            color: #ffe6a4;
+            font-weight: 700;
+        }
+
+        #loading-hint {
+            margin-top: 8px;
+            min-height: 22px;
+            font-size: 12px;
+            color: rgba(201, 219, 239, 0.82);
+            letter-spacing: 0.3px;
+        }
+
         #title-screen {
             background:
                 linear-gradient(180deg, rgba(6, 10, 16, 0.42), rgba(4, 8, 13, 0.78)),
@@ -2358,7 +2436,23 @@
         </div>
         <div id="victory-skip-tip">過場中，按 Enter 可略過</div>
 
-        <div id="title-screen" class="screen show">
+        <div id="loading-screen" class="screen show">
+            <div id="loading-card" class="screen-card">
+                <div id="loading-title">載入中・佈陣啟動</div>
+                <div id="loading-sub">
+                    正在準備場景美術、怪物、角色動作與音效資源。<br>
+                    請稍候，讓遊戲先把資料載入完成。
+                </div>
+                <div id="loading-bar-shell"><div id="loading-bar-fill"></div></div>
+                <div id="loading-meta">
+                    <div id="loading-count">0 / 0</div>
+                    <div id="loading-percent">0%</div>
+                </div>
+                <div id="loading-hint">正在初始化...</div>
+            </div>
+        </div>
+
+        <div id="title-screen" class="screen">
             <div class="screen-card">
                 <img class="logo" src="assets/game_logo_title.png" alt="Logo">
                 <div id="title-name">打字修仙傳：五鍵飛升</div>
@@ -2476,6 +2570,11 @@
 
         const el = {
             app: $("#app"),
+            loadingScreen: $("#loading-screen"),
+            loadingBarFill: $("#loading-bar-fill"),
+            loadingCount: $("#loading-count"),
+            loadingPercent: $("#loading-percent"),
+            loadingHint: $("#loading-hint"),
             topHud: $("#top-hud"),
             bgLayer: $("#bg-layer"),
             bgAurora: $("#bg-aurora"),
@@ -3772,6 +3871,116 @@
             const clip = new Audio(audio.sfx[name]);
             clip.volume = clamp(volume, 0, 1);
             clip.play().catch(() => {});
+        }
+
+        function setLoadingProgress(done, total, hint = "") {
+            if (!el.loadingBarFill || !el.loadingCount || !el.loadingPercent || !el.loadingHint) return;
+            const safeTotal = Math.max(1, total || 1);
+            const ratio = clamp((done || 0) / safeTotal, 0, 1);
+            el.loadingBarFill.style.width = `${Math.round(ratio * 100)}%`;
+            el.loadingCount.textContent = `${Math.min(done || 0, safeTotal)} / ${safeTotal}`;
+            el.loadingPercent.textContent = `${Math.round(ratio * 100)}%`;
+            if (hint) el.loadingHint.textContent = hint;
+        }
+
+        function collectPreloadAssetUrls() {
+            const html = String(document.documentElement?.outerHTML || "");
+            const pattern = /(?:["'(])((?:assets|audio)\/[^"'()\s>]+\.(?:png|jpg|jpeg|gif|webp|mp3|wav|ogg))(?=["')\s>])/gi;
+            const urls = new Set();
+            let match;
+            while ((match = pattern.exec(html))) {
+                if (!match[1]) continue;
+                urls.add(match[1]);
+            }
+            return Array.from(urls);
+        }
+
+        function preloadImageAsset(url, timeoutMs = 9000) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                let settled = false;
+                const done = () => {
+                    if (settled) return;
+                    settled = true;
+                    clearTimeout(timer);
+                    img.onload = null;
+                    img.onerror = null;
+                    resolve();
+                };
+                const timer = setTimeout(done, timeoutMs);
+                img.onload = done;
+                img.onerror = done;
+                img.decoding = "async";
+                img.src = url;
+                if (img.complete) done();
+            });
+        }
+
+        function preloadAudioAsset(url, timeoutMs = 12000) {
+            return new Promise((resolve) => {
+                const audioProbe = new Audio();
+                let settled = false;
+                const done = () => {
+                    if (settled) return;
+                    settled = true;
+                    clearTimeout(timer);
+                    audioProbe.removeEventListener("canplaythrough", done);
+                    audioProbe.removeEventListener("loadeddata", done);
+                    audioProbe.removeEventListener("error", done);
+                    audioProbe.removeEventListener("stalled", done);
+                    audioProbe.removeEventListener("abort", done);
+                    resolve();
+                };
+                const timer = setTimeout(done, timeoutMs);
+                audioProbe.preload = "auto";
+                audioProbe.addEventListener("canplaythrough", done, { once: true });
+                audioProbe.addEventListener("loadeddata", done, { once: true });
+                audioProbe.addEventListener("error", done, { once: true });
+                audioProbe.addEventListener("stalled", done, { once: true });
+                audioProbe.addEventListener("abort", done, { once: true });
+                audioProbe.src = url;
+                try {
+                    audioProbe.load();
+                } catch (error) {
+                    done();
+                }
+            });
+        }
+
+        function preloadAssetByUrl(url) {
+            if (/\.mp3$|\.wav$|\.ogg$/i.test(url)) return preloadAudioAsset(url);
+            return preloadImageAsset(url);
+        }
+
+        async function runLoadingSequence() {
+            const minLoadingMs = 2200;
+            const loadingStart = performance.now();
+            setLoadingProgress(0, 1, "掃描資源清單...");
+            let urls = collectPreloadAssetUrls();
+            const total = urls.length || 1;
+            let done = 0;
+            setLoadingProgress(done, total, `準備下載 ${total} 項資源...`);
+
+            if (urls.length > 0) {
+                const tasks = urls.map((url) => preloadAssetByUrl(url).finally(() => {
+                    done += 1;
+                    const shortName = url.split("/").slice(-2).join("/");
+                    const phaseText = /audio\//i.test(url) ? "載入音效" : "載入美術";
+                    setLoadingProgress(done, total, `${phaseText}：${shortName}`);
+                }));
+                await Promise.allSettled(tasks);
+            } else {
+                done = 1;
+                setLoadingProgress(done, total, "資源清單為空，略過預載。");
+            }
+
+            const elapsed = performance.now() - loadingStart;
+            if (elapsed < minLoadingMs) {
+                setLoadingProgress(done, total, "整理戰場中...");
+                await new Promise((resolve) => setTimeout(resolve, minLoadingMs - elapsed));
+            }
+            setLoadingProgress(total, total, "載入完成，準備進入遊戲。");
+            await new Promise((resolve) => setTimeout(resolve, 220));
         }
 
         function showToast(message, duration = 1400) {
@@ -7040,7 +7249,8 @@
             });
         }
 
-        function bootstrap() {
+        async function bootstrap() {
+            game.mode = "loading";
             readProfile();
             applyAccessibilityOptions();
             initStaticUI();
@@ -7057,6 +7267,15 @@
             updateStageTrack();
             syncImeInputVisibility();
             requestAnimationFrame(loop);
+            try {
+                await runLoadingSequence();
+            } catch (error) {
+                setLoadingProgress(1, 1, "載入過程發生問題，將直接進入遊戲。");
+                await new Promise((resolve) => setTimeout(resolve, 400));
+            }
+            if (el.loadingScreen) el.loadingScreen.classList.remove("show");
+            if (el.titleScreen) el.titleScreen.classList.add("show");
+            game.mode = "title";
         }
 
         bootstrap();
