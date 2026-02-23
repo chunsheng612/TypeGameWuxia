@@ -1562,6 +1562,190 @@
             line-height: 1.6;
         }
 
+        #cloud-settings {
+            width: min(620px, 100%);
+            margin: 10px auto 0;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(8, 14, 22, 0.56);
+            padding: 8px;
+            text-align: left;
+        }
+
+        #cloud-settings-title {
+            font-size: 12px;
+            color: rgba(255, 228, 163, 0.92);
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        .cloud-setting-row {
+            display: grid;
+            grid-template-columns: 86px minmax(0, 1fr);
+            align-items: center;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .cloud-setting-row label {
+            font-size: 12px;
+            color: rgba(219, 232, 249, 0.9);
+        }
+
+        .cloud-setting-row input {
+            width: 100%;
+            min-width: 0;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(5, 10, 16, 0.76);
+            color: #eef7ff;
+            padding: 7px 8px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .cloud-setting-row input:focus {
+            border-color: rgba(128, 252, 221, 0.74);
+            box-shadow: 0 0 0 2px rgba(114, 242, 218, 0.12);
+        }
+
+        #cloud-settings-actions {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        #cloud-settings-actions .wood-btn {
+            min-width: 124px;
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+
+        #cloud-settings-status {
+            margin-top: 6px;
+            min-height: 18px;
+            font-size: 12px;
+            color: rgba(198, 218, 239, 0.84);
+            line-height: 1.4;
+        }
+
+        #title-leaderboard {
+            margin-top: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background:
+                linear-gradient(180deg, rgba(7, 13, 22, 0.72), rgba(6, 11, 18, 0.6)),
+                radial-gradient(circle at 8% 12%, rgba(255, 225, 153, 0.08), rgba(255, 225, 153, 0));
+            padding: 10px;
+            text-align: left;
+        }
+
+        #title-leaderboard-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        #title-leaderboard-title {
+            font-size: 13px;
+            color: rgba(255, 230, 168, 0.94);
+            letter-spacing: 1px;
+        }
+
+        #title-leaderboard-status {
+            font-size: 11px;
+            color: rgba(206, 222, 241, 0.82);
+        }
+
+        #title-leaderboard-grid {
+            margin-top: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px;
+        }
+
+        .lb-stage-card {
+            border-radius: 9px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(7, 13, 22, 0.56);
+            padding: 7px 8px;
+            min-height: 134px;
+        }
+
+        .lb-stage-name {
+            font-size: 11px;
+            color: rgba(233, 241, 253, 0.9);
+            min-height: 30px;
+            line-height: 1.35;
+        }
+
+        .lb-stage-score {
+            margin-top: 3px;
+            font-family: "WuxiaTitle", "Noto Serif TC", serif;
+            font-size: 18px;
+            color: #ffe4a3;
+            letter-spacing: 1px;
+        }
+
+        .lb-stage-player {
+            margin-top: 2px;
+            font-size: 11px;
+            color: rgba(188, 241, 226, 0.86);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .lb-top3-list {
+            margin-top: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .lb-top3-row {
+            display: grid;
+            grid-template-columns: 18px minmax(0, 1fr) auto;
+            gap: 4px;
+            align-items: center;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2px 4px;
+            font-size: 10px;
+            color: rgba(227, 238, 252, 0.9);
+        }
+
+        .lb-top3-rank {
+            text-align: center;
+            color: rgba(255, 223, 156, 0.94);
+        }
+
+        .lb-top3-name {
+            min-width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .lb-top3-score {
+            color: rgba(255, 239, 199, 0.96);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .lb-you-rank {
+            margin-top: 5px;
+            padding-top: 4px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.08);
+            font-size: 10px;
+            color: rgba(174, 245, 212, 0.9);
+            line-height: 1.35;
+        }
+
         #stage-select-screen {
             background:
                 linear-gradient(180deg, rgba(7, 11, 16, 0.5), rgba(6, 9, 14, 0.82)),
@@ -1884,6 +2068,94 @@
             justify-content: center;
             gap: 8px;
             flex-wrap: wrap;
+        }
+
+        #cloud-upload-panel {
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(8, 14, 22, 0.54);
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        #cloud-upload-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        #cloud-upload-title {
+            font-size: 13px;
+            color: rgba(255, 228, 165, 0.94);
+            letter-spacing: 1px;
+        }
+
+        #cloud-upload-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        #cloud-upload-actions .wood-btn {
+            min-width: 110px;
+            font-size: 13px;
+            padding: 6px 10px;
+        }
+
+        #cloud-upload-status {
+            margin-top: 6px;
+            min-height: 18px;
+            font-size: 12px;
+            color: rgba(206, 223, 243, 0.88);
+            line-height: 1.45;
+        }
+
+        #cloud-upload-rankboard {
+            margin-top: 6px;
+            min-height: 24px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6px 8px;
+            color: rgba(216, 231, 248, 0.86);
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        #cloud-upload-rankboard .rankboard-title {
+            margin-bottom: 4px;
+            color: rgba(255, 226, 163, 0.92);
+            font-size: 11px;
+        }
+
+        #cloud-upload-rankboard .rankboard-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        #cloud-upload-rankboard .rankboard-row {
+            display: grid;
+            grid-template-columns: 18px minmax(0, 1fr) auto;
+            gap: 6px;
+            align-items: center;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 3px 5px;
+        }
+
+        #cloud-upload-rankboard .rankboard-row.you {
+            border-color: rgba(123, 255, 203, 0.24);
+            background: rgba(118, 255, 203, 0.05);
+        }
+
+        #cloud-upload-rankboard .rankboard-meta {
+            margin-top: 5px;
+            color: rgba(177, 245, 214, 0.88);
         }
 
         #fail-screen .screen-card {
@@ -2473,10 +2745,33 @@
                         <button id="btn-contrast" class="wood-btn">高對比：關</button>
                         <button id="btn-motion" class="wood-btn">低動態：關</button>
                     </div>
+                    <div id="cloud-settings">
+                        <div id="cloud-settings-title">排行榜同步（Google Sheet）</div>
+                        <div class="cloud-setting-row">
+                            <label for="cloud-player-name">暱稱</label>
+                            <input id="cloud-player-name" type="text" maxlength="20" placeholder="例如：嘉北小劍客">
+                        </div>
+                        <div class="cloud-setting-row">
+                            <label for="cloud-sheet-url">Sheet URL</label>
+                            <input id="cloud-sheet-url" type="url" placeholder="Google Apps Script Web App URL">
+                        </div>
+                        <div id="cloud-settings-actions">
+                            <button id="btn-cloud-save" class="wood-btn">儲存設定</button>
+                            <button id="btn-cloud-refresh" class="wood-btn">更新排行榜</button>
+                        </div>
+                        <div id="cloud-settings-status">尚未連線。</div>
+                    </div>
                 </div>
                 <div id="control-hints">
                     先選關，再挑戰。每關都是獨立 3:00 計分模式，可重複挑戰刷星等。<br>
                     選關頁可切換英打 / 國字中打 / 純注音；五關都能用同一模式挑戰。魔王模式為無盡連戰（無時間限制）。門規：眼看前方敵人，不看鍵盤。
+                </div>
+                <div id="title-leaderboard">
+                    <div id="title-leaderboard-head">
+                        <div id="title-leaderboard-title">雲端排行榜（各關最高分）</div>
+                        <div id="title-leaderboard-status">尚未載入</div>
+                    </div>
+                    <div id="title-leaderboard-grid"></div>
                 </div>
             </div>
         </div>
@@ -2526,6 +2821,17 @@
                 <div id="growth-panel">
                     <div class="result-section-title">修行紀錄</div>
                     <div id="growth-panel-text">尚無歷史資料。</div>
+                </div>
+                <div id="cloud-upload-panel">
+                    <div id="cloud-upload-head">
+                        <div id="cloud-upload-title">雲端成績上傳（Google Sheet）</div>
+                        <div id="cloud-upload-actions">
+                            <button id="btn-upload-score" class="wood-btn">上傳本次成績</button>
+                            <button id="btn-cloud-refresh-result" class="wood-btn">更新排行榜</button>
+                        </div>
+                    </div>
+                    <div id="cloud-upload-status">僅支援上傳五關 3:00 結算成績。</div>
+                    <div id="cloud-upload-rankboard">本關排行榜尚未載入。</div>
                 </div>
                 <div id="result-actions">
                     <button id="btn-replay" class="wood-btn">再挑戰本關</button>
@@ -2646,6 +2952,13 @@
             btnZhBpmfMode: $("#btn-zh-bpmf-mode"),
             btnTitleSettings: $("#btn-title-settings"),
             titleMore: $("#title-more"),
+            cloudPlayerName: $("#cloud-player-name"),
+            cloudSheetUrl: $("#cloud-sheet-url"),
+            btnCloudSave: $("#btn-cloud-save"),
+            btnCloudRefresh: $("#btn-cloud-refresh"),
+            cloudSettingsStatus: $("#cloud-settings-status"),
+            titleLeaderboardStatus: $("#title-leaderboard-status"),
+            titleLeaderboardGrid: $("#title-leaderboard-grid"),
             stageSelectScreen: $("#stage-select-screen"),
             stageSelectModeBar: $("#stage-select-modebar"),
             btnModeEn: $("#btn-mode-en"),
@@ -2672,6 +2985,10 @@
             resultMaxCombo: $("#result-max-combo"),
             resultTyped: $("#result-typed"),
             certificate: $("#certificate"),
+            btnUploadScore: $("#btn-upload-score"),
+            btnCloudRefreshResult: $("#btn-cloud-refresh-result"),
+            cloudUploadStatus: $("#cloud-upload-status"),
+            cloudUploadRankboard: $("#cloud-upload-rankboard"),
             btnReplay: $("#btn-replay"),
             btnPractice: $("#btn-practice"),
             btnRestart: $("#btn-restart"),
@@ -3157,6 +3474,8 @@
                 assistMode: true,
                 highContrast: false,
                 reducedMotion: false,
+                playerName: "",
+                sheetWebhookUrl: "",
                 sessions: 0,
                 totalKeys: 0,
                 bestAcc: 0,
@@ -3172,10 +3491,23 @@
             unlockedAchievements: new Set(),
             imeLastHandledValue: "",
             imeLastHandledAt: 0,
-            enemyAmbientFxTimer: 1.4
+            enemyAmbientFxTimer: 1.4,
+            cloud: {
+                leaderboard: {},
+                top3ByStage: {},
+                playerRanksByStage: {},
+                loading: false,
+                lastSyncAt: 0,
+                lastError: "",
+                statusText: "尚未載入",
+                pendingUpload: null,
+                uploading: false,
+                lastSubmitRank: null
+            }
         };
 
         const PROFILE_STORAGE_KEY = "typegame_profile_v2";
+        const DEFAULT_CLOUD_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyEGf5vu0UvFEKFxfsbebSnoPOfIKbQKsgUXZuOzU2VjW61T5Sqi2knO9QvqBOC-qJnXQ/exec";
 
         function getStage() {
             return game.currentStageDef || STAGES[game.stageIndex];
@@ -3511,6 +3843,17 @@
             if (!Array.isArray(game.profile.achievements)) {
                 game.profile.achievements = [];
             }
+            if (typeof game.profile.playerName !== "string") {
+                game.profile.playerName = "";
+            }
+            if (typeof game.profile.sheetWebhookUrl !== "string") {
+                game.profile.sheetWebhookUrl = "";
+            }
+            game.profile.playerName = game.profile.playerName.trim().slice(0, 20);
+            game.profile.sheetWebhookUrl = game.profile.sheetWebhookUrl.trim();
+            if (!game.profile.sheetWebhookUrl) {
+                game.profile.sheetWebhookUrl = DEFAULT_CLOUD_WEBHOOK_URL;
+            }
             ensureStageRecordsShape();
             ensureSpecialRecordsShape();
             game.unlockedAchievements = new Set(game.profile.achievements);
@@ -3522,6 +3865,701 @@
             } catch (error) {
                 // Ignore storage quota or privacy mode errors.
             }
+        }
+
+        function escapeHtmlText(value) {
+            return String(value ?? "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        function sanitizePlayerName(name) {
+            return String(name || "").trim().slice(0, 20);
+        }
+
+        function getCloudWebhookUrl() {
+            return String(game.profile.sheetWebhookUrl || "").trim();
+        }
+
+        function isCloudWebhookConfigured() {
+            const url = getCloudWebhookUrl();
+            return /^https?:\/\//i.test(url);
+        }
+
+        function setCloudSettingsStatus(text, tone = "neutral") {
+            if (!el.cloudSettingsStatus) return;
+            el.cloudSettingsStatus.textContent = text;
+            el.cloudSettingsStatus.dataset.tone = tone;
+        }
+
+        function setCloudUploadStatus(text, tone = "neutral") {
+            if (!el.cloudUploadStatus) return;
+            el.cloudUploadStatus.textContent = text;
+            el.cloudUploadStatus.dataset.tone = tone;
+        }
+
+        function setTitleLeaderboardStatus(text, tone = "neutral") {
+            if (!el.titleLeaderboardStatus) return;
+            el.titleLeaderboardStatus.textContent = text;
+            el.titleLeaderboardStatus.dataset.tone = tone;
+        }
+
+        function syncCloudSettingsInputs() {
+            if (el.cloudPlayerName) el.cloudPlayerName.value = game.profile.playerName || "";
+            if (el.cloudSheetUrl) el.cloudSheetUrl.value = game.profile.sheetWebhookUrl || "";
+        }
+
+        function formatCloudTimestamp(ts) {
+            if (!Number.isFinite(ts) || ts <= 0) return "";
+            try {
+                const d = new Date(ts);
+                const hh = String(d.getHours()).padStart(2, "0");
+                const mm = String(d.getMinutes()).padStart(2, "0");
+                const ss = String(d.getSeconds()).padStart(2, "0");
+                return `${hh}:${mm}:${ss}`;
+            } catch (error) {
+                return "";
+            }
+        }
+
+        function getCloudLeaderboardEntry(stageId) {
+            const key = String(stageId);
+            const raw = game.cloud?.leaderboard?.[key];
+            if (!raw || typeof raw !== "object") return null;
+            return raw;
+        }
+
+        function getCloudTop3Entries(stageId) {
+            const key = String(stageId);
+            const rows = game.cloud?.top3ByStage?.[key];
+            return Array.isArray(rows) ? rows : [];
+        }
+
+        function getCloudPlayerRankEntry(stageId) {
+            const key = String(stageId);
+            const raw = game.cloud?.playerRanksByStage?.[key];
+            if (!raw || typeof raw !== "object") return null;
+            return raw;
+        }
+
+        function renderCloudUploadRankboard() {
+            if (!el.cloudUploadRankboard) return;
+            const stage = getStage();
+            const pending = game.cloud.pendingUpload;
+            const stageId = Number(pending?.record?.stageId || stage?.id || 0);
+            if (!stageId || stageId < 1 || stageId > STAGES.length) {
+                el.cloudUploadRankboard.textContent = "本關排行榜僅在五關 3:00 結算時顯示。";
+                return;
+            }
+
+            const top3 = getCloudTop3Entries(stageId);
+            const playerRank = getCloudPlayerRankEntry(stageId) || (game.cloud.lastSubmitRank && Number(game.cloud.lastSubmitRank.stageId) === stageId ? game.cloud.lastSubmitRank : null);
+            if (!top3.length && !playerRank) {
+                el.cloudUploadRankboard.textContent = "本關排行榜尚未載入。可按「更新排行榜」查看雲端前三名。";
+                return;
+            }
+
+            const rowsHtml = (top3.length ? top3.slice(0, 3) : [{ rank: 1, playerName: "尚無資料", score: 0 }]).map((row, index) => {
+                const rank = Math.max(1, Math.round(Number(row.rank) || (index + 1)));
+                const name = escapeHtmlText(row.playerName || "匿名弟子");
+                const score = Math.max(0, Math.round(Number(row.score) || 0));
+                const isYou = !!playerRank && playerRank.rank === rank && String(playerRank.playerName || "") === String(row.playerName || "");
+                return `
+                    <div class="rankboard-row ${isYou ? "you" : ""}">
+                        <div>${rank}</div>
+                        <div style="min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${name}</div>
+                        <div>${score}</div>
+                    </div>
+                `;
+            }).join("");
+
+            let meta = "";
+            if (playerRank && Number.isFinite(Number(playerRank.rank))) {
+                const rank = Math.max(1, Math.round(Number(playerRank.rank)));
+                const score = Math.max(0, Math.round(Number(playerRank.score) || 0));
+                meta = `你的目前名次：第 <b>${rank}</b> 名（${score} 分）`;
+            } else if (sanitizePlayerName(game.profile.playerName)) {
+                meta = "尚未找到你的雲端名次，先上傳一次成績即可顯示。";
+            } else {
+                meta = "上傳時會詢問姓名，完成後可顯示你的名次。";
+            }
+
+            const stageLabel = STAGE_TRACK[stageId - 1]?.name || `第${stageId}關`;
+            el.cloudUploadRankboard.innerHTML = `
+                <div class="rankboard-title">${escapeHtmlText(stageLabel)} 雲端排行榜（前 3 名）</div>
+                <div class="rankboard-list">${rowsHtml}</div>
+                <div class="rankboard-meta">${meta}</div>
+            `;
+        }
+
+        function renderTitleLeaderboard() {
+            if (!el.titleLeaderboardGrid) return;
+            const cards = STAGES.map((stage) => {
+                const entry = getCloudLeaderboardEntry(stage.id);
+                const top3 = getCloudTop3Entries(stage.id);
+                const playerRank = getCloudPlayerRankEntry(stage.id);
+                const stageShortName = STAGE_TRACK[(stage.id || 1) - 1]?.name || `第${stage.id}關`;
+                if (!entry) {
+                    return `
+                        <div class="lb-stage-card">
+                            <div class="lb-stage-name">第${stage.id}關・${escapeHtmlText(stageShortName)}</div>
+                            <div class="lb-stage-score">--</div>
+                            <div class="lb-stage-player">尚無雲端紀錄</div>
+                            <div class="lb-you-rank">輸入姓名並上傳後，這裡會顯示你的名次。</div>
+                        </div>
+                    `;
+                }
+                const score = Math.max(0, Math.round(Number(entry.score) || 0));
+                const player = escapeHtmlText(entry.playerName || "匿名弟子");
+                const extra = [];
+                if (entry.typingModeLabel) extra.push(escapeHtmlText(entry.typingModeLabel));
+                if (entry.grade) extra.push(`評等 ${escapeHtmlText(entry.grade)}`);
+                if (Number.isFinite(entry.stars)) extra.push(`${"★".repeat(clamp(Math.round(entry.stars), 0, 3))}${"☆".repeat(3 - clamp(Math.round(entry.stars), 0, 3))}`);
+                const metaText = extra.length ? extra.join(" ｜ ") : "雲端最高分";
+                const top3Html = (top3.length ? top3.slice(0, 3) : [entry]).map((row, index) => {
+                    const rank = Math.max(1, Math.round(Number(row.rank) || (index + 1)));
+                    return `
+                        <div class="lb-top3-row">
+                            <div class="lb-top3-rank">${rank}</div>
+                            <div class="lb-top3-name">${escapeHtmlText(row.playerName || "匿名弟子")}</div>
+                            <div class="lb-top3-score">${Math.max(0, Math.round(Number(row.score) || 0))}</div>
+                        </div>
+                    `;
+                }).join("");
+                const youRankText = playerRank && Number.isFinite(Number(playerRank.rank))
+                    ? `你的名次：第 ${Math.max(1, Math.round(Number(playerRank.rank)))} 名（${Math.max(0, Math.round(Number(playerRank.score) || 0))} 分）`
+                    : (sanitizePlayerName(game.profile.playerName) ? "尚未找到你的名次（先上傳一次）" : "上傳時輸入姓名即可追蹤個人名次");
+                return `
+                    <div class="lb-stage-card">
+                        <div class="lb-stage-name">第${stage.id}關・${escapeHtmlText(stageShortName)}</div>
+                        <div class="lb-stage-score">${score}</div>
+                        <div class="lb-stage-player">${player}</div>
+                        <div class="lb-stage-player">${metaText}</div>
+                        <div class="lb-top3-list">${top3Html}</div>
+                        <div class="lb-you-rank">${escapeHtmlText(youRankText)}</div>
+                    </div>
+                `;
+            }).join("");
+            el.titleLeaderboardGrid.innerHTML = cards;
+            renderCloudUploadRankboard();
+        }
+
+        function buildCloudRequestUrl(action, extraParams = null) {
+            const raw = getCloudWebhookUrl();
+            if (!raw) return "";
+            try {
+                const url = new URL(raw);
+                if (action) url.searchParams.set("action", action);
+                const playerName = sanitizePlayerName(game.profile.playerName || "");
+                if (playerName) {
+                    url.searchParams.set("playerName", playerName);
+                }
+                if (extraParams && typeof extraParams === "object") {
+                    Object.entries(extraParams).forEach(([key, value]) => {
+                        if (value === undefined || value === null || value === "") return;
+                        url.searchParams.set(String(key), String(value));
+                    });
+                }
+                url.searchParams.set("_ts", String(Date.now()));
+                return url.toString();
+            } catch (error) {
+                return "";
+            }
+        }
+
+        async function parseCloudResponsePayload(response) {
+            const text = await response.text();
+            if (!text) return null;
+            try {
+                return JSON.parse(text);
+            } catch (error) {
+                return { rawText: text };
+            }
+        }
+
+        function parseStageIdFromUnknown(value) {
+            if (Number.isFinite(Number(value))) {
+                const n = Math.round(Number(value));
+                return n >= 1 && n <= STAGES.length ? n : 0;
+            }
+            const str = String(value || "");
+            const match = str.match(/(\d+)/);
+            if (!match) return 0;
+            const n = Number(match[1]);
+            return Number.isFinite(n) && n >= 1 && n <= STAGES.length ? n : 0;
+        }
+
+        function normalizeCloudScoreRow(row, fallbackStageId = 0) {
+            if (!row || typeof row !== "object") return null;
+            const stageId = parseStageIdFromUnknown(
+                row.stageId ?? row.stage_id ?? row.stage ?? row.level ?? row.levelId ?? row.stageIndex ?? fallbackStageId
+            );
+            if (!stageId) return null;
+
+            const score = Number(
+                row.score ?? row.bestScore ?? row.best_score ?? row.points ?? row.total ?? row.finalScore ?? row.final_score ?? 0
+            );
+            if (!Number.isFinite(score)) return null;
+
+            const starsRaw = Number(row.stars ?? row.bestStars ?? row.best_stars ?? row.star ?? -1);
+            const accRaw = Number(row.acc ?? row.accuracy ?? row.accuracyRate ?? row.correctRate ?? row.correct_rate ?? 0);
+            const comboRaw = Number(row.maxCombo ?? row.max_combo ?? row.combo ?? 0);
+            const typedRaw = Number(row.totalTyped ?? row.total_typed ?? row.typed ?? row.keys ?? row.totalKeys ?? 0);
+            const timestampRaw = row.timestamp ?? row.time ?? row.createdAt ?? row.created_at ?? row.updatedAt ?? row.updated_at ?? row.date;
+            const ts = Number.isFinite(Number(timestampRaw))
+                ? Number(timestampRaw)
+                : (timestampRaw ? Date.parse(String(timestampRaw)) : 0);
+            const playerName = sanitizePlayerName(
+                row.playerName ?? row.player_name ?? row.nickname ?? row.name ?? row.player ?? row.user ?? ""
+            ) || "匿名弟子";
+            const typingMode = String(row.typingMode ?? row.typing_mode ?? row.mode ?? row.inputMode ?? "").trim();
+            const typingModeLabel = String(row.typingModeLabel ?? row.typing_mode_label ?? row.modeLabel ?? row.mode_label ?? "").trim();
+            const grade = String(row.grade ?? row.bestGrade ?? row.best_grade ?? "").trim().toUpperCase().slice(0, 2);
+
+            return {
+                stageId,
+                score,
+                stars: Number.isFinite(starsRaw) ? clamp(Math.round(starsRaw), 0, 3) : null,
+                acc: Number.isFinite(accRaw) ? Math.round(accRaw) : 0,
+                maxCombo: Number.isFinite(comboRaw) ? Math.round(comboRaw) : 0,
+                typed: Number.isFinite(typedRaw) ? Math.round(typedRaw) : 0,
+                playerName,
+                typingMode,
+                typingModeLabel: typingModeLabel || (typingMode ? getTypingModeLabel(typingMode) : ""),
+                grade: grade || "",
+                timestamp: Number.isFinite(ts) ? ts : 0
+            };
+        }
+
+        function collectCloudRowsFromPayload(payload) {
+            if (!payload) return [];
+            if (Array.isArray(payload)) return payload;
+            if (typeof payload !== "object") return [];
+
+            const arrayKeys = ["rows", "data", "items", "records", "list"];
+            for (const key of arrayKeys) {
+                if (Array.isArray(payload[key])) return payload[key];
+            }
+
+            if (payload.result && typeof payload.result === "object") {
+                const nested = collectCloudRowsFromPayload(payload.result);
+                if (nested.length) return nested;
+            }
+            if (payload.payload && typeof payload.payload === "object") {
+                const nested = collectCloudRowsFromPayload(payload.payload);
+                if (nested.length) return nested;
+            }
+            if (payload.leaderboard && Array.isArray(payload.leaderboard)) return payload.leaderboard;
+
+            const byStageObj = payload.leaderboard && typeof payload.leaderboard === "object"
+                ? payload.leaderboard
+                : (payload.stageBest && typeof payload.stageBest === "object"
+                    ? payload.stageBest
+                    : (payload.stages && typeof payload.stages === "object" ? payload.stages : null));
+            if (byStageObj) {
+                return Object.entries(byStageObj).map(([stageKey, value]) => {
+                    if (value && typeof value === "object" && !Array.isArray(value)) {
+                        return { ...value, stageId: value.stageId ?? stageKey };
+                    }
+                    return { stageId: stageKey, score: Number(value) || 0 };
+                });
+            }
+
+            return [];
+        }
+
+        function normalizeCloudLeaderboardPayload(payload) {
+            const rows = collectCloudRowsFromPayload(payload);
+            const bestByStage = {};
+
+            rows.forEach((rawRow) => {
+                const normalized = normalizeCloudScoreRow(rawRow);
+                if (!normalized) return;
+                const key = String(normalized.stageId);
+                const current = bestByStage[key];
+                if (!current) {
+                    bestByStage[key] = normalized;
+                    return;
+                }
+                const normalizedScore = Number(normalized.score) || 0;
+                const currentScore = Number(current.score) || 0;
+                const betterScore = normalizedScore > currentScore;
+                const newerTie = normalizedScore === currentScore && (normalized.timestamp || 0) > (current.timestamp || 0);
+                if (betterScore || newerTie) {
+                    bestByStage[key] = normalized;
+                }
+            });
+
+            return bestByStage;
+        }
+
+        function normalizeCloudTop3ByStagePayload(payload) {
+            const out = {};
+            if (payload && typeof payload === "object") {
+                const top3Obj = payload.top3ByStage && typeof payload.top3ByStage === "object"
+                    ? payload.top3ByStage
+                    : (payload.top3 && typeof payload.top3 === "object" && !Array.isArray(payload.top3) ? payload.top3 : null);
+                if (top3Obj) {
+                    Object.entries(top3Obj).forEach(([stageKey, list]) => {
+                        const stageId = parseStageIdFromUnknown(stageKey);
+                        if (!stageId) return;
+                        const normalizedList = (Array.isArray(list) ? list : [])
+                            .map((row, index) => {
+                                const normalized = normalizeCloudScoreRow({ ...row, stageId: row?.stageId ?? stageId });
+                                if (!normalized) return null;
+                                const rank = Number(row?.rank);
+                                return {
+                                    ...normalized,
+                                    rank: Number.isFinite(rank) ? Math.max(1, Math.round(rank)) : (index + 1)
+                                };
+                            })
+                            .filter(Boolean)
+                            .sort((a, b) => (a.rank || 999) - (b.rank || 999))
+                            .slice(0, 3);
+                        out[String(stageId)] = normalizedList;
+                    });
+                }
+            }
+
+            if (Object.keys(out).length === 0) {
+                const bestByStage = normalizeCloudLeaderboardPayload(payload);
+                Object.entries(bestByStage).forEach(([stageKey, row]) => {
+                    out[String(stageKey)] = [{ ...row, rank: 1 }];
+                });
+            }
+
+            return out;
+        }
+
+        function normalizeCloudPlayerRanksByStagePayload(payload) {
+            const out = {};
+            if (!payload || typeof payload !== "object") return out;
+            const ranksObj = payload.playerRanksByStage && typeof payload.playerRanksByStage === "object"
+                ? payload.playerRanksByStage
+                : null;
+            if (ranksObj) {
+                Object.entries(ranksObj).forEach(([stageKey, row]) => {
+                    const stageId = parseStageIdFromUnknown(stageKey);
+                    if (!stageId || !row || typeof row !== "object") return;
+                    const normalized = normalizeCloudScoreRow({ ...row, stageId: row.stageId ?? stageId });
+                    if (!normalized) return;
+                    const rank = Number(row.rank ?? row.place ?? row.position);
+                    if (!Number.isFinite(rank)) return;
+                    out[String(stageId)] = {
+                        ...normalized,
+                        rank: Math.max(1, Math.round(rank))
+                    };
+                });
+            }
+
+            if (payload.playerRank && typeof payload.playerRank === "object") {
+                const stageId = parseStageIdFromUnknown(payload.playerRank.stageId);
+                const normalized = normalizeCloudScoreRow(payload.playerRank);
+                const rank = Number(payload.playerRank.rank ?? payload.playerRank.place ?? payload.playerRank.position);
+                if (stageId && normalized && Number.isFinite(rank)) {
+                    out[String(stageId)] = {
+                        ...normalized,
+                        rank: Math.max(1, Math.round(rank))
+                    };
+                }
+            }
+
+            return out;
+        }
+
+        function applyCloudLeaderboard(payload) {
+            const normalized = normalizeCloudLeaderboardPayload(payload);
+            if (!normalized || typeof normalized !== "object") return false;
+            game.cloud.leaderboard = normalized;
+            game.cloud.top3ByStage = normalizeCloudTop3ByStagePayload(payload);
+            const playerRanks = normalizeCloudPlayerRanksByStagePayload(payload);
+            if (playerRanks && typeof playerRanks === "object" && Object.keys(playerRanks).length > 0) {
+                game.cloud.playerRanksByStage = {
+                    ...game.cloud.playerRanksByStage,
+                    ...playerRanks
+                };
+            }
+            if (payload && typeof payload === "object" && payload.playerRank && typeof payload.playerRank === "object") {
+                const rankEntry = normalizeCloudPlayerRanksByStagePayload({ playerRank: payload.playerRank });
+                const values = Object.values(rankEntry);
+                game.cloud.lastSubmitRank = values.length ? values[0] : null;
+            }
+            renderTitleLeaderboard();
+            return true;
+        }
+
+        function syncCloudUploadPanelState() {
+            const pending = game.cloud.pendingUpload;
+            if (el.btnUploadScore) {
+                const disableUpload =
+                    !pending ||
+                    game.cloud.uploading ||
+                    !isCloudWebhookConfigured() ||
+                    !!pending.uploaded;
+                el.btnUploadScore.disabled = !!disableUpload;
+                el.btnUploadScore.textContent = game.cloud.uploading
+                    ? "上傳中..."
+                    : (pending?.uploaded ? "已上傳" : "詢問後上傳");
+            }
+            if (el.btnCloudRefreshResult) {
+                el.btnCloudRefreshResult.disabled = !!game.cloud.loading;
+            }
+            renderCloudUploadRankboard();
+        }
+
+        function prepareCloudUploadFromResult({ stage, finalScore, acc, stageEval }) {
+            const canUpload = !!stage && game.independentStageMode && !game.practiceMode && !game.endlessBossMode;
+            if (!canUpload) {
+                game.cloud.pendingUpload = null;
+                if (game.endlessBossMode) {
+                    setCloudUploadStatus("魔王模式為無盡分數，未納入各關排行榜上傳。", "neutral");
+                } else if (game.practiceMode) {
+                    setCloudUploadStatus("練習模式不會上傳雲端排行榜。", "neutral");
+                } else {
+                    setCloudUploadStatus("僅支援五關 3:00 結算成績上傳。", "neutral");
+                }
+                syncCloudUploadPanelState();
+                return;
+            }
+
+            const record = {
+                action: "submitScore",
+                stageId: stage.id,
+                stageName: STAGE_TRACK[(stage.id || 1) - 1]?.name || stage.name || `第${stage.id}關`,
+                score: Math.round(finalScore),
+                accuracy: Math.round(acc),
+                maxCombo: Math.round(game.maxCombo),
+                totalTyped: Math.round(game.totalTyped),
+                totalKeys: Math.round(game.totalTyped),
+                defeated: Math.round(game.defeated || 0),
+                stars: Math.round(stageEval?.stars || 0),
+                grade: String(stageEval?.grade || "D"),
+                pass: !!stageEval?.pass,
+                typingMode: getTypingModeKey(),
+                typingModeLabel: getTypingModeLabel(),
+                playerName: sanitizePlayerName(game.profile.playerName) || "匿名弟子",
+                durationSec: STAGE_CHALLENGE_SECONDS,
+                submittedAt: new Date().toISOString(),
+                clientVersion: "web-final"
+            };
+
+            game.cloud.pendingUpload = {
+                record,
+                uploaded: false,
+                uploadedAt: 0
+            };
+            game.cloud.lastSubmitRank = null;
+
+            if (!isCloudWebhookConfigured()) {
+                setCloudUploadStatus("請先在首頁「遊戲設定」填入 Google Apps Script Web App URL，再上傳。", "warn");
+            } else {
+                setCloudUploadStatus("按「詢問後上傳」後，會先確認是否上傳並輸入姓名，再送到 Google Sheet。", "neutral");
+            }
+            syncCloudUploadPanelState();
+        }
+
+        async function fetchCloudLeaderboard(options = {}) {
+            const { silent = false } = options;
+            const url = buildCloudRequestUrl("leaderboard");
+            if (!url) {
+                if (!silent) showToast("請先設定 Google Sheet Web App URL", 900);
+                game.cloud.lastError = "";
+                setCloudSettingsStatus("請先輸入 Google Apps Script Web App URL。", "warn");
+                setTitleLeaderboardStatus("尚未設定 URL", "warn");
+                renderTitleLeaderboard();
+                syncCloudUploadPanelState();
+                return null;
+            }
+
+            game.cloud.loading = true;
+            game.cloud.lastError = "";
+            setCloudSettingsStatus("正在同步排行榜...", "loading");
+            setTitleLeaderboardStatus("同步中...", "loading");
+            if (game.mode === "result") setCloudUploadStatus("正在更新首頁排行榜...", "loading");
+            syncCloudUploadPanelState();
+
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    cache: "no-store"
+                });
+                const payload = await parseCloudResponsePayload(response);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const ok = applyCloudLeaderboard(payload);
+                game.cloud.lastSyncAt = Date.now();
+                const syncTime = formatCloudTimestamp(game.cloud.lastSyncAt);
+                if (!ok) {
+                    setTitleLeaderboardStatus("格式不符（無法解析排行榜）", "warn");
+                    setCloudSettingsStatus("已連線，但回傳格式無法解析。", "warn");
+                    if (game.mode === "result") setCloudUploadStatus("已連線，但排行榜格式無法解析。", "warn");
+                } else {
+                    setTitleLeaderboardStatus(syncTime ? `已更新 ${syncTime}` : "已更新", "ok");
+                    setCloudSettingsStatus("排行榜同步完成。", "ok");
+                    if (game.mode === "result") setCloudUploadStatus("排行榜已更新，可回首頁查看各關最高分。", "ok");
+                }
+                return game.cloud.leaderboard;
+            } catch (error) {
+                const message = error?.message ? String(error.message) : "連線失敗";
+                game.cloud.lastError = message;
+                setTitleLeaderboardStatus("同步失敗", "error");
+                setCloudSettingsStatus(`同步失敗：${message}`, "error");
+                if (game.mode === "result") setCloudUploadStatus(`排行榜更新失敗：${message}`, "error");
+                if (!silent) showToast("排行榜同步失敗", 900);
+                return null;
+            } finally {
+                game.cloud.loading = false;
+                syncCloudUploadPanelState();
+            }
+        }
+
+        async function uploadPendingCloudScore() {
+            const pending = game.cloud.pendingUpload;
+            if (!pending || !pending.record) {
+                setCloudUploadStatus("目前沒有可上傳的結算成績。", "warn");
+                syncCloudUploadPanelState();
+                return;
+            }
+            const url = getCloudWebhookUrl();
+            if (!isCloudWebhookConfigured()) {
+                setCloudUploadStatus("請先在首頁「遊戲設定」填入 Google Apps Script Web App URL。", "warn");
+                showToast("先設定 Google Sheet URL", 900);
+                syncCloudUploadPanelState();
+                return;
+            }
+
+            const consent = window.confirm("是否要上傳這次成績到雲端排行榜？");
+            if (!consent) {
+                setCloudUploadStatus("已取消上傳。你的成績仍保留在本機紀錄。", "neutral");
+                syncCloudUploadPanelState();
+                return;
+            }
+
+            const currentName = sanitizePlayerName(game.profile.playerName || el.cloudPlayerName?.value || "");
+            const nameInput = window.prompt("請輸入排行榜顯示姓名（20字內）", currentName || "");
+            if (nameInput === null) {
+                setCloudUploadStatus("已取消上傳（未輸入姓名）。", "neutral");
+                syncCloudUploadPanelState();
+                return;
+            }
+            const savedName = sanitizePlayerName(nameInput);
+            if (!savedName) {
+                setCloudUploadStatus("姓名不能為空白，已取消上傳。", "warn");
+                syncCloudUploadPanelState();
+                return;
+            }
+            if (savedName !== (game.profile.playerName || "")) {
+                game.profile.playerName = savedName;
+                writeProfile();
+                syncCloudSettingsInputs();
+            }
+
+            const record = {
+                ...pending.record,
+                playerName: savedName,
+                submittedAt: new Date().toISOString()
+            };
+
+            game.cloud.uploading = true;
+            setCloudUploadStatus("正在上傳成績到 Google Sheet...", "loading");
+            setCloudSettingsStatus("正在上傳成績...", "loading");
+            syncCloudUploadPanelState();
+
+            try {
+                const body = new URLSearchParams();
+                body.set("action", "submitScore");
+                body.set("record", JSON.stringify(record));
+
+                const response = await fetch(url, {
+                    method: "POST",
+                    body,
+                    cache: "no-store"
+                });
+                const payload = await parseCloudResponsePayload(response);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                let leaderboardUpdated = false;
+                let playerRankText = "";
+                if (payload && typeof payload === "object") {
+                    leaderboardUpdated = applyCloudLeaderboard(payload);
+                    if (!leaderboardUpdated && payload.leaderboard) {
+                        leaderboardUpdated = applyCloudLeaderboard(payload.leaderboard);
+                    }
+                    const rank = Number(payload.playerRank?.rank);
+                    const score = Number(payload.playerRank?.score ?? record.score);
+                    if (Number.isFinite(rank)) {
+                        playerRankText = `你目前第 ${Math.max(1, Math.round(rank))} 名（${Math.max(0, Math.round(score || 0))} 分）`;
+                    }
+                }
+
+                game.cloud.pendingUpload = {
+                    record,
+                    uploaded: true,
+                    uploadedAt: Date.now()
+                };
+                setCloudUploadStatus(playerRankText ? `成績已上傳，${playerRankText}。` : "成績已上傳。可回首頁查看各關排行榜。", "ok");
+                setCloudSettingsStatus("成績上傳完成。", "ok");
+                if (leaderboardUpdated) {
+                    const syncTime = formatCloudTimestamp(Date.now());
+                    setTitleLeaderboardStatus(syncTime ? `已更新 ${syncTime}` : "已更新", "ok");
+                } else {
+                    await fetchCloudLeaderboard({ silent: true });
+                }
+                showToast("雲端上傳成功", 900);
+            } catch (error) {
+                const message = error?.message ? String(error.message) : "上傳失敗";
+                setCloudUploadStatus(`上傳失敗：${message}`, "error");
+                setCloudSettingsStatus(`上傳失敗：${message}`, "error");
+                showToast("雲端上傳失敗", 900);
+            } finally {
+                game.cloud.uploading = false;
+                syncCloudUploadPanelState();
+            }
+        }
+
+        function saveCloudSettings() {
+            const playerName = sanitizePlayerName(el.cloudPlayerName?.value || "");
+            const sheetWebhookUrl = String(el.cloudSheetUrl?.value || "").trim() || DEFAULT_CLOUD_WEBHOOK_URL;
+            game.profile.playerName = playerName;
+            game.profile.sheetWebhookUrl = sheetWebhookUrl;
+            if (!playerName) {
+                game.cloud.playerRanksByStage = {};
+                game.cloud.lastSubmitRank = null;
+            }
+            writeProfile();
+            syncCloudSettingsInputs();
+            if (!sheetWebhookUrl) {
+                setCloudSettingsStatus("已儲存。尚未填入雲端 URL。", "neutral");
+                setTitleLeaderboardStatus("尚未設定 URL", "warn");
+                game.cloud.leaderboard = {};
+                renderTitleLeaderboard();
+            } else if (!/^https?:\/\//i.test(sheetWebhookUrl)) {
+                setCloudSettingsStatus("已儲存，但 URL 格式看起來不正確。", "warn");
+            } else {
+                setCloudSettingsStatus("設定已儲存，可按「更新排行榜」測試連線。", "ok");
+                fetchCloudLeaderboard({ silent: true });
+            }
+            if (game.mode === "result" && game.cloud.pendingUpload?.record) {
+                prepareCloudUploadFromResult({
+                    stage: getStage(),
+                    finalScore: game.cloud.pendingUpload.record.score,
+                    acc: game.cloud.pendingUpload.record.accuracy,
+                    stageEval: {
+                        stars: game.cloud.pendingUpload.record.stars,
+                        grade: game.cloud.pendingUpload.record.grade,
+                        pass: game.cloud.pendingUpload.record.pass
+                    }
+                });
+            } else {
+                syncCloudUploadPanelState();
+            }
+            renderTitleLeaderboard();
         }
 
         function applyAccessibilityOptions() {
@@ -5768,6 +6806,7 @@
             el.resultMaxCombo.textContent = String(game.maxCombo);
             el.resultScore.textContent = String(finalScore);
             el.resultTyped.textContent = String(game.totalTyped);
+            prepareCloudUploadFromResult({ stage, finalScore, acc, stageEval });
 
             if (stage && timedChallengeResult) {
                 const record = getStageRecord(stage.id);
@@ -5995,6 +7034,8 @@
             game.imeLastHandledAt = 0;
             game.enemyAmbientFxTimer = 1.1;
             game.independentStageMode = true;
+            game.cloud.pendingUpload = null;
+            game.cloud.uploading = false;
             game.autoPausedByBlur = false;
             game.pauseStartedAt = 0;
             game.victoryCinematic.active = false;
@@ -7034,6 +8075,39 @@
                 });
             }
 
+            if (el.btnCloudSave) {
+                el.btnCloudSave.addEventListener("click", () => {
+                    saveCloudSettings();
+                });
+            }
+
+            if (el.btnCloudRefresh) {
+                el.btnCloudRefresh.addEventListener("click", async () => {
+                    await fetchCloudLeaderboard();
+                });
+            }
+
+            if (el.btnCloudRefreshResult) {
+                el.btnCloudRefreshResult.addEventListener("click", async () => {
+                    await fetchCloudLeaderboard();
+                });
+            }
+
+            if (el.btnUploadScore) {
+                el.btnUploadScore.addEventListener("click", async () => {
+                    await uploadPendingCloudScore();
+                });
+            }
+
+            [el.cloudPlayerName, el.cloudSheetUrl].forEach((input) => {
+                if (!input) return;
+                input.addEventListener("keydown", (event) => {
+                    if (event.key !== "Enter") return;
+                    event.preventDefault();
+                    saveCloudSettings();
+                });
+            });
+
             if (el.btnModeEn) {
                 el.btnModeEn.addEventListener("click", () => {
                     applyTypingMode("en");
@@ -7061,6 +8135,10 @@
                 game.mode = "title";
                 setTitleOptionsOpen(false);
                 el.titleScreen.classList.add("show");
+                renderTitleLeaderboard();
+                if (isCloudWebhookConfigured() && (!game.cloud.lastSyncAt || (Date.now() - game.cloud.lastSyncAt) > 45000)) {
+                    fetchCloudLeaderboard({ silent: true });
+                }
             });
 
             el.stageSelectGrid.addEventListener("click", (event) => {
@@ -7254,6 +8332,16 @@
             readProfile();
             applyAccessibilityOptions();
             initStaticUI();
+            syncCloudSettingsInputs();
+            renderTitleLeaderboard();
+            if (isCloudWebhookConfigured()) {
+                setCloudSettingsStatus("已讀取雲端設定，等待同步。", "neutral");
+                setTitleLeaderboardStatus("等待同步", "neutral");
+            } else {
+                setCloudSettingsStatus("可填入 Google Apps Script Web App URL 來啟用排行榜。", "neutral");
+                setTitleLeaderboardStatus("尚未設定 URL", "warn");
+            }
+            syncCloudUploadPanelState();
             bindButtons();
             bindKeyboard();
             setScene("title");
@@ -7276,6 +8364,9 @@
             if (el.loadingScreen) el.loadingScreen.classList.remove("show");
             if (el.titleScreen) el.titleScreen.classList.add("show");
             game.mode = "title";
+            if (isCloudWebhookConfigured()) {
+                fetchCloudLeaderboard({ silent: true });
+            }
         }
 
         bootstrap();
